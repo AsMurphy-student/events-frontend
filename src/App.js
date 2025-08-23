@@ -48,9 +48,13 @@ function App() {
         As the project is still fairly new, it is not recommended to rely on this data as things may change, be slow, or go down unexpectedly.
       </p>
 
+      <p class="content">
+        Data last updated { new Date(events.last_updated).toLocaleDateString('en-US', {hour: 'numeric', minute: 'numeric'}) }
+      </p>
+
       {events.length === 0 ? (
           <p>Loading...</p>
-        ) : (<EventList events={events}></EventList>) }
+        ) : (<EventList events={events.data}></EventList>) }
     </div>
   );
 }
